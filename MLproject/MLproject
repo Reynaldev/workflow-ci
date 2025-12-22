@@ -1,0 +1,9 @@
+name: workflow-ci 
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      C: {type: float, default: 1.0}
+    command: "python modelling.py {C}"
