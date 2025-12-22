@@ -34,4 +34,4 @@ if __name__ == "__main__":
         model.fit(train_ds, y_train)
 
         prediction = model.predict(test_ds)
-        print(classification_report(data["Sentiment"], prediction, target_names=["positive", "negative"]))
+        print(classification_report(y_test, prediction, target_names=["positive", "negative"]))
