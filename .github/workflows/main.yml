@@ -37,7 +37,7 @@ jobs:
       
       - name: Run mlflow project
         run: |
-          mlflow run MLproject --env-manager=local --experiment-name "Workflow CI"
+          mlflow run MLproject --env-manager=local
  
       - name: Set up Git LFS
         run: |
@@ -59,7 +59,7 @@ jobs:
 
       - name: Build docker model
         run: |
-          mlflow models build-docker -m models:/sentiment-analysis/latest -name $BUILD_TAG
+          mlflow models build-docker -m models:/sentiment-analysis/latest -n $BUILD_TAG
           
       - name: Log in to Docker Hub
         run: |
